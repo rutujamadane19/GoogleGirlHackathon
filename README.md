@@ -82,3 +82,5 @@ To run Metamate, follow these steps:
     ```bash
     python server.py
 
+
+![home!](./assets/home.jpg)
