@@ -51,12 +51,12 @@ a{
     clear: both;
   }
 
-.col2{
+.col2{ 
     float: right;
     width:500px;
     margin-right: 50px;
-    background-image: url('/static/images/index.jpg');
-  background-size: cover;
+     background-image: url('./images/index.jpg');
+  background-size: cover;  
  
     height:500px; /* Should be removed. Only for demonstration */
   }
