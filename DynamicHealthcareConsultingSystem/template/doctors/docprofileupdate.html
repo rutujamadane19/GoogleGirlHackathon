@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Update Profile</title>
+  <link rel="icon" href="/static/images/icon.jpg" />
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+
+    .profile-main {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-main h4 {
+      color: #3498db; /* Blue */
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .profile-main form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .profile-main input {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      transition: border-color 0.3s;
+      width: 100%;
+    }
+
+    .profile-main input:focus {
+      border-color: #3498db; /* Blue on focus */
+    }
+
+    .profile-main button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #3498db;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      align-self: center; /* Center the button */
+    }
+
+    .profile-main button:hover {
+      background-color: #2980b9; /* Darker blue on hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-main">
+    <form method="post" action="/profileupdate">
+      <h4>Basic Information</h4>
+      {% for i in profiledata %}
+        <input id="name" name="d_name" placeholder="Your Name" value="{{ i.dname }}" required />
+        <input id="age" name="d_age" placeholder="Your Age" value="{{ i.dage }}" required />
+        <input type="email" id="email" name="d_email" placeholder="Your Email" value="{{ i.demail }}" required />
+        <input id="phno" name="d_phno" placeholder="Your Phone Number" value="{{ i.dphno }}" required />
+        <input id="phno2" name="d_phno2" placeholder="Your Alternate Phonenumber" value="{{ i.dphno2 }}" required />
+      
+      <h4>Education</h4>
+        <input id="degree" name="d_degree" placeholder="Your Degree" value="{{ i.ddegree }}" required />
+        <input id="speci" name="d_speci" placeholder="Your Specialization" value="{{ i.dspeci }}" required />
+        <input id="speci" name="d_clg" placeholder="University Name" value="{{ i.dclg }}" required />
+        <input id="speci" name="d_rank" placeholder="Rank or Percentage" value="{{ i.drank }}" required />
+
+      <h4>Experience</h4>
+        <input id="exp" name="d_exp" placeholder="Your Years of Experience" value="{{ i.dexp }}" required />
+        <input id="exp" name="d_hosp" placeholder="Hospital Name" value="{{ i.dhosp }}" required />
+      
+      <h4>Treatment Category</h4>
+        <input id="exp" name="d_treat" placeholder="Treatment Type" value="{{ i.dtreat }}" required />
+      
+      <h4>Fees Details</h4>
+        <input id="exp" name="d_fees" placeholder="Fee for per member" value="{{ i.dfees }}" required />
+      
+      <h4>Meet Details</h4>
+        <input id="exp" name="d_meet" placeholder="Meet Link" value="{{ i.dmeet }}" required />
+        <input id="exp" name="d_days" placeholder="Available Days" value="{{ i.ddays }}" required />
+        <input id="exp" name="d_time" placeholder="Available Timings" value="{{ i.dtiming }}" required />
+        <input id="exp" name="d_status" placeholder="Status Update (Active or Inactive)" value="{{ i.dstatus }}" required />
+
+      {% endfor %}
+      <button type="submit" id="btn">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

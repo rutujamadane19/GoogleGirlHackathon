@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Book Now</title>
+    <link rel="icon" href="/static/images/icon.jpg" />
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full-height viewport */
+        }
+
+        .book {
+            background-color: white;
+            padding: 30px; /* Ample padding */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            max-width: 400px; /* Constrain form width */
+            text-align: center; /* Center-align text */
+        }
+
+        .book h3 {
+            margin: 0; /* No extra margin */
+            color: #333; /* Dark gray text */
+        }
+
+        .book form {
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            gap: 15px; /* Space between elements */
+        }
+
+        .book form input {
+            padding: 10px; /* Padding for inputs */
+            border: 1px solid #ccc; /* Light gray border */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 16px; /* Larger font size for readability */
+            transition: border-color 0.3s; /* Smooth transition */
+        }
+
+        .book form input:focus {
+            border-color: #007bff; /* Blue border on focus */
+            outline: none; /* No outline on focus */
+        }
+
+        .book form input[type="submit"] {
+            background-color: #007bff; /* Blue background */
+            color: white; /* White text */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 16px; /* Larger font size */
+            cursor: pointer; /* Pointer cursor */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+
+        .book form input[type="submit"]:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        .book form input[type="text"], 
+        .book form input[type="email"] {
+            width: 100%; /* Full-width input */
+        }
+    </style>
+</head>
+<body>
+    <div class="book">
+        <h3>Book your Seat!</h3>
+        <form action="/bookings" method="post">
+            <input type="text" placeholder="Name" name="name" id="name" required />
+            <input type="email" placeholder="Email ID" name="email" id="email" required />
+            <input type="email" placeholder="Doctor's Email ID" name="demail" id="demail" required />
+            <input type="text" placeholder="Mention the issues" name="issues" id="issues" required />
+            <input type="text" placeholder="Consulting Days" name="cdays" id="cdays" required />
+            <input type="text" placeholder="Consulting Date" name="cdates" id="cdates" required />
+            <input type="submit" id="submit" value="Submit" />
+        </form>
+    </div>
+</body>
+</html>

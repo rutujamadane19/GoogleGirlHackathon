@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="/static/images/icon.jpg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>{{session.u_email}}</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .header {
+            padding: 15px;
+            background-color: #333; /* Dark gray background */
+            color: white; /* White text */
+            text-align: center;
+        }
+
+        .subheader {
+            background-color: #000; /* Black background */
+            padding: 10px;
+            border-bottom: 1px solid #ddd; /* Light gray border */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .subheader ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around; /* Spreads items evenly */
+            align-items: center; /* Vertically centers items */
+        }
+
+        .subheader li {
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: capitalize; /* Capitalize first letter of each word */
+        }
+
+        .subheader a {
+            text-decoration: none; /* No underline */
+            color: white; /* White text */
+            transition: color 0.3s; /* Smooth transition for hover effect */
+        }
+
+        .subheader a:hover {
+            color: #007bff; /* Change to blue on hover */
+        }
+
+        .search {
+            display: flex;
+            justify-content: center; /* Center the search bar */
+            padding: 20px; /* Add padding for spacing */
+        }
+
+        .search form {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Align input and button */
+            padding: 10px;
+            background-color: #f5f5f5; /* Light gray background */
+            width: 40%; /* Control width of the search bar */
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        .search input[type="search"] {
+            width: 80%; /* Wider input field */
+            padding: 10px;
+            border: 1px solid #ccc; /* Light gray border */
+            border-radius: 5px;
+            font-size: 16px;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Inner shadow */
+        }
+
+        .search input[type="submit"] {
+            padding: 10px 20px; /* Extra padding for button */
+            background-color: #007bff; /* Blue background */
+            color: white; /* White text */
+            border: none; /* No border */
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+
+        .search input[type="submit"]:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        .doc-list {
+            padding: 20px; /* Add padding to doctor listing */
+        }
+
+        .doc-list ul {
+            list-style: none; /* No bullets */
+            padding: 0; /* Remove padding */
+        }
+
+        .doc-list li {
+            margin-top: 1rem; /* Spacing between items */
+        }
+
+        .hosp-data {
+            background-color: white; /* White background */
+            padding: 15px; /* Add padding */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        .hosp-data a {
+            text-decoration: none; /* No underline */
+            color: #007bff; /* Blue text */
+        }
+
+        .hosp-data a:hover {
+            color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h3>Hi, {{session.u_email}}</h3>
+    </div>
+    
+    <div class="subheader">
+        <ul>
+            <li>
+                <a href="{{url_for('media')}}">Community</a>
+            </li>
+            <li>
+                <a href="{{url_for('product')}}">Pharmacy</a>
+            </li>
+            <li>
+                <a href="{{url_for('browseengine')}}">HomeSolutions</a>
+            </li>
+            <li>
+                <a href="http://localhost:5001">Disease Predict</a>
+            </li>
+            <li>
+                <a href="/userlogout" onmouseover="this.style.color='#ff0000';" onmouseout="this.style.color='#007bff';">Sign Out</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="search">
+        <form method="post" action="/main">
+            <input type="search" name="issue" id="myinput" placeholder="Enter your health issue" title="Type an issue" />
+            <input type="submit" value="Search" />
+        </form>
+    </div>
+
+    <div class="doc-list">
+      {% if disease %}
+        <strong style="color: #000000;">You may have below disease:- <br></strong>
+        <p>{{disease}}</p>
+        <span style="margin: 5px;"></span>
+        {% endif %}
+        <ul>
+            <strong>Suggested Doctors</strong>
+            {% for row in hospdata %}
+            <li>
+               <div class="hosp-data">
+                   <b>Doctor Name:</b> {{row.dname}} <br>
+                   <b>Hospital Name:</b> {{row.dhosp}} <br>
+                   <b>Specialization:</b> {{row.dspeci}} <br>
+                   <b>Email Address:</b> {{row.demail}} <br>
+                   <b>Phone Number:</b> {{row.dphno}} <br>
+                   <b>Alternate Phone Number:</b> {{row.dphno2}} <br>
+                   <b>Status:</b> {{row.dstatus}} <br>
+                   <b><a href="{{row.dmeet}}" target="_blank">Meet Here</a></b> <br>
+                   <div class="doctors-moreinfo">
+                     <a href="/bookings" target="_blank">Book Now</a>
+                   </div>
+                </div>
+            </li>
+            {% endfor %}
+         </ul>
+    </div>
+</body>
+</html>

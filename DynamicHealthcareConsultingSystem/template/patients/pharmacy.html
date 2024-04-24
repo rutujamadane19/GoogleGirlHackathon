@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Pharmacy</title>
+    <link rel="icon" href="/static/images/icon.jpg" />
+    <link rel="stylesheet" type="text/css" href="/static/pharmacy.css" />
+    <script src="/static/pharmacy.js"></script>
+</head>
+<body>
+    <h3>Hi, {{session.u_email}}!</h3>
+
+    <div class="main">
+        <div class="title">
+            <h2>Online Pharmacy</h2>
+        </div>
+
+        <form method="post" action="/product">
+            <input type="search" name="key" id="key-search" placeholder="Search products...">
+            <input type="submit" value="Search" id="search-bar">
+        </form>
+
+        <div class="product">
+            {% for i in data %}
+            <div class="product-card">
+                <h3>Product ID</h3> <p>{{i.id}}</p>
+                <h3>Product Name</h3> <p>{{i.name}}</p>
+                <h3>Product Description</h3> <p>{{i.description}}</p>
+                <h3>Amount per Unit</h3> <p>{{i.price}}</p>
+                <h3>Quantity:</h3> <input type="number" id="quantity-{{i.id}}" name="quantity" min="1" max="100" value="1">
+                <button id="btn-{{i.id}}" onclick="generateBill()">Generate Bill</button>
+            </div>
+            {% endfor %}
+            
+            <h3>Total Amount:</h3> <h3 id="bill-amt">0</h3>
+            <h4><a href="/deliverydetails">Add Delivery Details</a></h4>
+        </div>
+    </div>
+
+    <script>
+    function generateBill(price, id) {
+        var quantity = document.getElementById("quantity-" + id).value;
+        var total = price * quantity;
+        document.getElementById("bill-amt").innerText = total;
+    }
+    </script>
+</body>
+</html>

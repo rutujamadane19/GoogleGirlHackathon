@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="/static/images/icon.jpg" />
+  <title>Doctors Portal</title>
+  <link rel="stylesheet" type="text/css" href="/static/docmain.css" />
+  <script src="/static/docmain.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5; /* Light gray background for easy reading */
+    }
+
+    .header {
+      background-color: #3498db; /* Blue */
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    .header h3 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .header a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      transition: color 0.3s;
+    }
+
+    .header a:hover {
+      color: #e74c3c; /* Red on hover */
+    }
+
+    .sub-header {
+      background-color: #2ecc71; /* Green */
+      padding: 15px;
+      text-align: center;
+    }
+
+    .sub-header ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .sub-header li {
+      font-size: 18px;
+    }
+
+    .sub-header a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .sub-header a:hover {
+      color: #3498db; /* Blue on hover */
+    }
+
+    .patient-list {
+      padding: 20px;
+      margin: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .patient-list h2 {
+      text-align: center;
+      font-size: 24px;
+      color: #333; /* Dark text */
+    }
+
+    .patient-list ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .patient-list li {
+      margin-bottom: 20px;
+    }
+
+    .councelling-data {
+      padding: 20px;
+      border: 1px solid #ddd; /* Light border */
+      border-radius: 10px;
+      background-color: #f9f9f9;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .councelling-data b {
+      color: #3498db; /* Blue for text highlights */
+    }
+
+    .councelling-data p a {
+      color: #e74c3c; /* Red for links */
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .councelling-data p a:hover {
+      color: #3498db; /* Blue on hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h3>Hi {{ session.admin_email }} 
+      <a href="/doclogout">Sign Out</a>
+    </h3>
+  </div>
+
+  <div class="sub-header">
+    <ul>
+      <li><a href="{{url_for('profileupdate')}}" >Update Profile</a></li>
+      <li><a href="{{url_for('paymentlogs')}}">Payments</a></li>
+      <li><a href="#">Medical Prescription Portal</a></li>
+      {% for i in docmeeting %}
+      <li><a href="{{i.dmeet}}" target="_blank">Give Counseling</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="patient-list">
+    <h2><center>Counseling List</center></h2>
+    <ul>
+      {% for row in bookingList %}
+      <li>
+        <div class="councelling-data">
+          <b>Name:</b> {{row.name}}<br>
+          <b>Issues:</b> {{row.issues}}<br>
+          <b>Days:</b> {{row.cdays}}<br>
+          <b>Dates:</b> {{row.cdates}}<br>
+          <p><a href="mailto:{{row.email}}">Reply</a></p>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+/* General styling for the page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling for the main container */
+.main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the title section */
+.title {
+    text-align: center;
+    color: #333;
+}
+
+.title h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Styling for the search bar */
+#key-search {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#search-bar {
+    padding: 8px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#search-bar:hover {
+    background-color: #218838;
+}
+
+/* Styling for the product card */
+.product {
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}
+
+/* Product card container */
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #fafafa;
+    transition: box-shadow 0.3s;
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Product card elements */
+.product-card h3 {
+    margin: 5px 0;
+    color: #333;
+}
+
+.product-card h4 {
+    margin: 0;
+    color: #555;
+}
+
+#quantity {
+    width: 50px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#btn:hover {
+    background-color: #0056b3;
+}
+
+/* Styling for the total amount display */
+#bill-amt {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Styling for the link to add delivery details */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
