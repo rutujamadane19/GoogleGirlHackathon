@@ -50,8 +50,7 @@ The project is feasible due to its modular structure and use of widely supported
 ## Installation and Setup
 
 - Recommended Python version - 3.10
-To run Metamate, follow these steps:
-
+- To run Metamate, follow these steps:
 1. *Clone the Repository*:
    bash
    git clone https://github.com/rutujamadane19/GoogleGirlHackathon.git
