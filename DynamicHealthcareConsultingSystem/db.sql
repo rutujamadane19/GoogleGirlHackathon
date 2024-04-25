@@ -1,5 +1,5 @@
-    CREATE DATABASE medimate;
-    use medimate;
+    CREATE DATABASE Metamate;
+    use Metamate;
     -- Users Table
 CREATE TABLE users (
     username VARCHAR(255),
@@ -97,7 +97,7 @@ CREATE TABLE contact (
 -- Insert dummy data into users table
 INSERT INTO users (username, usermail, userpass)
 VALUES 
-    ('tushar', 'tushar@gmail.com', 'password123'),
+    ('rutuja', 'rutuja@gmail.com', 'password123'),
     ('Jane Smith', 'janesmith@example.com', 'secret123'),
     ('Emily Johnson', 'emilyj@example.com', 'mypassword');
 
@@ -110,7 +110,7 @@ VALUES
 -- Insert dummy data into bookings table
 INSERT INTO bookings (name, email, demail, issues, cdays, cdates)
 VALUES
-    ('tushar', 'tushar@gmail.com', 'rahul@gmail.com', 'Knee pain', 'Monday', '2024-05-01'),
+    ('rutuja', 'rutuja@gmail.com', 'rahul@gmail.com', 'Knee pain', 'Monday', '2024-05-01'),
     ('Jane Smith', 'janesmith@example.com', 'bobgreen@example.com', 'Headache', 'Tuesday', '2024-04-02');
 
 -- Insert dummy data into products table
@@ -123,13 +123,13 @@ VALUES
 -- Insert dummy data into deliverdetails table
 INSERT INTO deliverdetails (name, email, address, phno)
 VALUES
-    ('tushar', 'tushar@gmail.com', '123 Elm St, Springfield', '123-456-7890'),
+    ('rutuja', 'rutuja@gmail.com', '123 Elm St, Springfield', '123-456-7890'),
     ('Jane Smith', 'janesmith@example.com', '456 Oak St, Springfield', '987-654-3210');
 
 -- Insert dummy data into payment table
 INSERT INTO payment (email, cardname, cardno, amount, paiddate, docemail)
 VALUES
-    ('tushar@gmail.com', 'Rahul', '1234567890123456', 50.00, '2024-05-01', 'rahul@gmail.com'),
+    ('rutuja@gmail.com', 'Rahul', '1234567890123456', 50.00, '2024-05-01', 'rahul@gmail.com'),
     ('janesmith@example.com', 'Jane Smith', '6543210987654321', 75.00, '2024-04-02', 'bobgreen@example.com');
 
 -- Insert dummy data into dataset table

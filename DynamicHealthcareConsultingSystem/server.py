@@ -20,9 +20,9 @@ from datetime import *
 app=Flask(__name__,template_folder='template')
 app.secret_key="key"
 app.config['MYSQL_HOST']="localhost"
-app.config['MYSQL_USER']="root"
-app.config['MYSQL_PASSWORD']="root"
-app.config['MYSQL_DB']="servetoexce"
+app.config['MYSQL_USER']="<Username>"
+app.config['MYSQL_PASSWORD']="<Password>"
+app.config['MYSQL_DB']="Metamate"
 mysql=MySQL(app)
 
 login_manager = LoginManager()
@@ -262,6 +262,9 @@ def doctorregistration():
             cursor.execute('INSERT INTO doctors VALUES (%s, %s, %s)', ( adminname, adminemail,adminpassword))
             mysql.connection.commit()
             msg = 'You have successfully registered!'
+            cursor.execute('INSERT INTO docprofile (dname, demail) VALUES (%s, %s)',
+                           (adminname, adminemail))
+            mysql.connection.commit()
             #after successfully inserted redirect to loginpage
             return render_template('/doctors/doclogin.html')
     elif request.method == 'POST':

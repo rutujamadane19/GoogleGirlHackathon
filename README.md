@@ -17,6 +17,9 @@ Metamate is a comprehensive healthcare recommendation assistant designed for the
 ## Project Overview
 Metamate is designed to be a one-stop solution for healthcare needs. The platform uses custom-trained machine learning models to predict diseases and suggests suitable doctors for users based on their symptoms. It also provides a space for users to share their thoughts on diagnosis and homemade solutions for common symptoms. For doctors, Metamate offers an interface to counsel users, update profile information, and provide medical prescriptions.
 
+## DEMO VIDEO
+[![Watch the video](https://img.youtube.com/vi/Z-E3DPRoDkg/hqdefault.jpg)](https://www.youtube.com/embed/Z-E3DPRoDkg)
+- [Click to watch Video](https://www.youtube.com/embed/Z-E3DPRoDkg)
 ## Key Features
 ### For Users
 1. *Disease Prediction*: Metamate uses custom-trained ML models to predict diseases such as kidney, stroke, diabetes, heart, liver, and pneumonia.
@@ -42,7 +45,8 @@ The project is feasible due to its modular structure and use of widely supported
 - *Machine Learning*: Scikit-learn, TensorFlow, Gemini
 - *Database*: SQLite (for simplicity, can be scaled to other databases), MySQL
 - *Virtual Environments*: Virtualenv
-
+## ML models
+- Models .ipynb are stored in Disease_Models directory
 ## Installation and Setup
 To run Metamate, follow these steps:
 
@@ -50,37 +54,40 @@ To run Metamate, follow these steps:
    bash
    git clone https://github.com/rutujamadane19/GoogleGirlHackathon.git
 2. **Prepare Mysql DB**
-- Run MySQl commands from `./DynamicHealthcareConsultingSystem/db.sql` to create necessary tables and populate with dummy data
-- Change Mysql Configuration in server.py in same directory
+- Run MySQl commands from `./DynamicHealthcareConsultingSystem/db.sql` to create necessary tables and populate with dummy data.
+- Change Mysql Configuration in `server.py` in same directory.
 
 2. **Set Up Disease Prediction Module**:
 
 1. Navigate to the `DiseasePrediction` directory.
 2. Create a virtual environment and activate it:
-   bash
+   ```bash
    virtualenv env
    env\Scripts\activate
 
 3. Install the required packages:
-    bash
+    ```
     pip install -r requirements.txt
 4. Start the application:
-    bash
+    ```bash
     python app.py
 3. *Set Up Dynamic Healthcare Consulting System*:
 
 1. Open a new terminal.
 2. Navigate to the DynamicHealthcareConsultingSystem directory.
 3. Repeat the virtual environment setup:
-    bash
+    ```bash
     virtualenv env
     env\Scripts\activate
 4. Install the necessary packages:
-    bash
+    ```bash
     pip install -r requirements.txt
 5. Start the application:
     ```bash
     python server.py
 
+## Conclusion
 
-![home!](./assets/home.jpg)
+Metamate is an innovative healthcare recommendation assistant that combines AI-driven disease prediction, personalized doctor recommendations, and online consultations to enhance healthcare accessibility. Its modular design ensures scalability, allowing the platform to grow with user demand while maintaining security and compliance with healthcare regulations.
+
+By providing a seamless user experience and fostering a supportive community, Metamate addresses key societal challenges in healthcare. Its focus on personalization and early disease detection can lead to improved health outcomes and reduced healthcare costs. With a clear roadmap for deployment and real-world impact, Metamate is set to become a valuable tool in modern healthcare.

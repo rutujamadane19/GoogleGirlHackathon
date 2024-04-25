@@ -66,35 +66,36 @@
   <div class="profile-main">
     <form method="post" action="/profileupdate">
       <h4>Basic Information</h4>
+      
       {% for i in profiledata %}
-        <input id="name" name="d_name" placeholder="Your Name" value="{{ i.dname }}" required />
-        <input id="age" name="d_age" placeholder="Your Age" value="{{ i.dage }}" required />
-        <input type="email" id="email" name="d_email" placeholder="Your Email" value="{{ i.demail }}" required />
-        <input id="phno" name="d_phno" placeholder="Your Phone Number" value="{{ i.dphno }}" required />
-        <input id="phno2" name="d_phno2" placeholder="Your Alternate Phonenumber" value="{{ i.dphno2 }}" required />
+      <input id="name" name="d_name" placeholder="Your Name" {% if i.dname %}value="{{ i.dname }}"{% endif %} required />
+      <input id="age" name="d_age" placeholder="Your Age" {% if i.dage %}value="{{ i.dage }}"{% endif %} required />
+      <input type="email" id="email" name="d_email" placeholder="Your Email" {% if i.demail %}value="{{ i.demail }}"{% endif %} required />
+      <input id="phno" name="d_phno" placeholder="Your Phone Number" {% if i.dphno %}value="{{ i.dphno }}"{% endif %} required />
+      <input id="phno2" name="d_phno2" placeholder="Your Alternate Phone Number" {% if i.dphno2 %}value="{{ i.dphno2 }}"{% endif %} required />
       
       <h4>Education</h4>
-        <input id="degree" name="d_degree" placeholder="Your Degree" value="{{ i.ddegree }}" required />
-        <input id="speci" name="d_speci" placeholder="Your Specialization" value="{{ i.dspeci }}" required />
-        <input id="speci" name="d_clg" placeholder="University Name" value="{{ i.dclg }}" required />
-        <input id="speci" name="d_rank" placeholder="Rank or Percentage" value="{{ i.drank }}" required />
-
+      <input id="degree" name="d_degree" placeholder="Your Degree" {% if i.ddegree %}value="{{ i.ddegree }}"{% endif %} required />
+      <input id="speci" name="d_speci" placeholder="Your Specialization" {% if i.dspeci %}value="{{ i.dspeci }}"{% endif %} required />
+      <input id="speci" name="d_clg" placeholder="University Name" {% if i.dclg %}value="{{ i.dclg }}"{% endif %} required />
+      <input id="speci" name="d_rank" placeholder="Rank or Percentage" {% if i.drank %}value="{{ i.drank }}"{% endif %} required />
+      
       <h4>Experience</h4>
-        <input id="exp" name="d_exp" placeholder="Your Years of Experience" value="{{ i.dexp }}" required />
-        <input id="exp" name="d_hosp" placeholder="Hospital Name" value="{{ i.dhosp }}" required />
+      <input id="exp" name="d_exp" placeholder="Your Years of Experience" {% if i.dexp %}value="{{ i.dexp }}"{% endif %} required />
+      <input id="exp" name="d_hosp" placeholder="Hospital Name" {% if i.dhosp %}value="{{ i.dhosp }}"{% endif %} required />
       
       <h4>Treatment Category</h4>
-        <input id="exp" name="d_treat" placeholder="Treatment Type" value="{{ i.dtreat }}" required />
+      <input id="exp" name="d_treat" placeholder="Treatment Type" {% if i.dtreat %}value="{{ i.dtreat }}"{% endif %} required />
       
       <h4>Fees Details</h4>
-        <input id="exp" name="d_fees" placeholder="Fee for per member" value="{{ i.dfees }}" required />
+      <input id="exp" name="d_fees" placeholder="Fee for per member" {% if i.dfees %}value="{{ i.dfees }}"{% endif %} required />
       
       <h4>Meet Details</h4>
-        <input id="exp" name="d_meet" placeholder="Meet Link" value="{{ i.dmeet }}" required />
-        <input id="exp" name="d_days" placeholder="Available Days" value="{{ i.ddays }}" required />
-        <input id="exp" name="d_time" placeholder="Available Timings" value="{{ i.dtiming }}" required />
-        <input id="exp" name="d_status" placeholder="Status Update (Active or Inactive)" value="{{ i.dstatus }}" required />
-
+      <input id="exp" name="d_meet" placeholder="Meet Link" {% if i.dmeet %}value="{{ i.dmeet }}"{% endif %} required />
+      <input id="exp" name="d_days" placeholder="Available Days" {% if i.ddays %}value="{{ i.ddays }}"{% endif %} required />
+      <input id="exp" name="d_time" placeholder="Available Timings" {% if i.dtiming %}value="{{ i.dtiming }}"{% endif %} required />
+      <input id="exp" name="d_status" placeholder="Status Update (Active or Inactive)" {% if i.dstatus %}value="{{ i.dstatus }}"{% endif %} required />
+      
       {% endfor %}
       <button type="submit" id="btn">Submit</button>
     </form>
