@@ -58,32 +58,32 @@ The project is feasible due to its modular structure and use of widely supported
 - Run MySQl commands from `./DynamicHealthcareConsultingSystem/db.sql` to create necessary tables and populate with dummy data.
 - Change Mysql Configuration in `server.py` in same directory.
 
-2. **Set Up Disease Prediction Module**:
+3. **Set Up Disease Prediction Module**:
 
-1. Navigate to the `DiseasePrediction` directory.
-2. Create a virtual environment and activate it:
+- Navigate to the `DiseasePrediction` directory.
+- Create a virtual environment and activate it:
    ```bash
    virtualenv env
    env\Scripts\activate
 
-3. Install the required packages:
+- Install the required packages:
     ```
     pip install -r requirements.txt
-4. Start the application:
+- Start the application:
     ```bash
     python app.py
-3. *Set Up Dynamic Healthcare Consulting System*:
+4. **Set Up Dynamic Healthcare Consulting System**:
 
-1. Open a new terminal.
-2. Navigate to the DynamicHealthcareConsultingSystem directory.
-3. Repeat the virtual environment setup:
+- Open a new terminal.
+- Navigate to the DynamicHealthcareConsultingSystem directory.
+- Repeat the virtual environment setup:
     ```bash
     virtualenv env
     env\Scripts\activate
-4. Install the necessary packages:
+5. Install the necessary packages:
     ```bash
     pip install -r requirements.txt
-5. Start the application:
+6. Start the application:
     ```bash
     python server.py
 
