@@ -48,6 +48,8 @@ The project is feasible due to its modular structure and use of widely supported
 ## ML models
 - Models .ipynb are stored in Disease_Models directory
 ## Installation and Setup
+
+- Recommended Python version - 3.10
 To run Metamate, follow these steps:
 
 1. *Clone the Repository*:
