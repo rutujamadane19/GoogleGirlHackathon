@@ -51,8 +51,8 @@ The project is feasible due to its modular structure and use of widely supported
 
 - Recommended Python version - 3.10
 - To run Metamate, follow these steps:
-1. *Clone the Repository*:
-   bash
+1. **Clone the Repository**:
+   ```bash
    git clone https://github.com/rutujamadane19/GoogleGirlHackathon.git
 2. **Prepare Mysql DB**
 - Run MySQl commands from `./DynamicHealthcareConsultingSystem/db.sql` to create necessary tables and populate with dummy data.
