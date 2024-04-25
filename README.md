@@ -55,8 +55,8 @@ The project is feasible due to its modular structure and use of widely supported
    ```bash
    git clone https://github.com/rutujamadane19/GoogleGirlHackathon.git
 2. **Prepare Mysql DB**
-- Run MySQl commands from `./DynamicHealthcareConsultingSystem/db.sql` to create necessary tables and populate with dummy data.
-- Change Mysql Configuration in `server.py` in same directory.
+- Run MySQl commands from `./DynamicHealthcareConsultingSystem/db.sql` in your MySQL server to create necessary tables and populate with dummy data.
+- Change Mysql <username> and <password> configuration in `server.py` in same directory.
 
 3. **Set Up Disease Prediction Module**:
 
